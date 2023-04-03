@@ -130,3 +130,13 @@ footer {
   font-size: 14px;
   color: rgb(62, 62, 62);
 }
+.btn {
+  color: rgb(62, 62, 62);
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  border: 1px solid;
+  width: 100px;
+}
+.btn:hover {
+  background-color: rgb(231, 231, 231);
+}

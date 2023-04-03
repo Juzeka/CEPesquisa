@@ -105,7 +105,7 @@ function App() {
               onChange={handleCep} 
               onKeyPress={handleBuscarCep}
             />
-            <button type='button' onClick={getCEP}>Buscar</button>
+            <button type='button' className='btn' onClick={getCEP}>Buscar</button>
           </div>
           <span className='exemplo'>Ex: 01001-000</span>
         </div>
