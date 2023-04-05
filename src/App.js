@@ -42,7 +42,6 @@ function App() {
 
         if (!data.erro) {
           setData(response.data);
-          openModal();
         } else {
           alert("CEP não encontrado!")
         }
