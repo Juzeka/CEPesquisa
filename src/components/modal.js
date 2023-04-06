@@ -1,25 +1,20 @@
 import { useState } from 'react';
 
 
-function Modal({id, Component}) {
-  const [display, setDisplay] = useState('none');
-  const styleModal = {display: display};
+function Modal({id,  Component, setIsVisible}) {
+  const [isOpen, setIsOpen] = useState(false);
 
 	const handleModal = () => {
-		if (display === 'none') {
-			setDisplay('none');
-		} else {
-			setDisplay('flex');
-		}
+		setIsVisible(false);
   }
 
 	return (
-		<div id={id} className='modal' style={styleModal}>
-			<div className='modal-body flex justify-space-around align-center'>
-				<button className='modal-close' onClick={handleModal}>x</button>
-				{Component}
-			</div>
-		</div>
+    <div id={id} className='modal'>
+      <div className='modal-body flex justify-space-around align-center'>
+        <button className='modal-close' onClick={handleModal}>&times;</button>
+        {Component}
+      </div>
+    </div>
 	)
 }
 

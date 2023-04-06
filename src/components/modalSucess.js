@@ -2,11 +2,12 @@ import Modal from "./modal";
 import ResultSearch from "./resultSearch";
 
 
-function ModalSucess({data}) {
+function ModalSucess({data, setIsVisible}) {
   return (
     <Modal
-      id='sucess' 
+      id='sucess'
       Component={<ResultSearch data={data}/>}
+      setIsVisible={setIsVisible}
     />
   )
 }

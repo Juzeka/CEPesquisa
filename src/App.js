@@ -9,6 +9,7 @@ import Input from './components/input';
 
 function App() {
   const [cep, setCep] = useState();
+  const [isVisible, setIsVisible] = useState(false);
   const [data, setData] = useState({
     cep: null,
     logradouro: null,
@@ -39,9 +40,9 @@ function App() {
       api.get(`${cep}/json`)
       .then((response) => {
         let data = response.data;
-
         if (!data.erro) {
           setData(response.data);
+          setIsVisible(true);
         } else {
           alert("CEP não encontrado!")
         }
@@ -58,7 +59,7 @@ function App() {
 
   return (
     <>
-      <ModalSucess data={data}/>
+      {isVisible && (<ModalSucess data={data} setIsVisible={setIsVisible}/>)}
       <div className="flex align-center flex-column">
         <h3>CEPESQUISA</h3>
         <div>
